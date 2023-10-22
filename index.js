@@ -3,56 +3,56 @@ const books = [
     name: "To Kill a Mockingbird",
     authorFirst: "Harper",
     authorLast: "Lee",
-    publishDate: [1960],
+    publishDate: 1960,
     genre: ["mystery", "historical", "fiction"],
   },
   {
     name: "The Great Gatsby",
     authorFirst: "F. Scott",
     authorLast: "Fitzgerald",
-    publishDate: [1925],
+    publishDate: 1925,
     genre: ["mystery", "historical", "fiction"],
   },
   {
     name: "The Hobbit",
     authorFirst: "JRR",
     authorLast: "Tolkien",
-    publishDate: [1937],
+    publishDate: 1937,
     genre: ["fantasy", "fiction"],
   },
   {
     name: "Harry Potter and the Deathly Hallows",
     authorFirst: "JK",
     authorLast: "Rowling",
-    publishDate: [1997],
+    publishDate: 1997,
     genre: ["fantasy", , "fiction"],
   },
   {
     name: "Ulysses",
     authorFirst: "James",
     authorLast: "Joyce",
-    publishDate: [1918],
+    publishDate: 1918,
     genre: ["historical", "non-fiction"],
   },
   {
     name: "War and Peace",
     authorFirst: "Leo",
     authorLast: "Tolstoy",
-    publishDate: [1867],
+    publishDate: 1867,
     genre: ["historical", "fiction"],
   },
   {
     name: "Pride and Prejudice",
     authorFirst: "Jane",
     authorLast: "Austen",
-    publishDate: [1813],
+    publishDate: 1813,
     genre: ["fiction"],
   },
   {
     name: "The Catcher in the Rye",
     authorFirst: "JD",
     authorLast: "Salinger",
-    publishDate: [1951],
+    publishDate: 1951,
     genre: ["fiction"],
   },
   {
@@ -85,30 +85,36 @@ const titles = [
 ];
 
 
-books.forEach((nombre) => {
-  console.log(nombre.authorFirst + " " + nombre.authorLast + " wrote " + nombre.name + " in " + nombre.publishDate)
-});
 
 
-books.forEach((molodoi) => {
-  molodoi.publishDate.forEach((publico) => console.log(publico) )});
-
-const age = books.sort((a,b) => a.publishDate-b.publishDate);
 
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
+books.forEach((nombre) => {
+  console.log(nombre.authorFirst + " " + nombre.authorLast + " wrote " + nombre.name + " in " + nombre.publishDate)
+});
 
 //Sort books from oldest to most recent
+const ordered = books.sort(function(book1, book2){
+  return book1.publishDate - book2.publishDate;
+});
 
+console.log(ordered);
 //sort books alphabetically
+const alphabet = titles.sort();
 
+console.log(alphabet);
 //Find who wrote War and Peace
 
 //how many books were written before 1900?
+const filtered = books.filter((el) => el.publishDate < 1900);
 
+console.log(filtered);
 //was there at least one book published within the last 100 years?
+const filtered2 = books.filter((element) => element.publishDate > "1923" && element.publishDate < "2023" );
 
-//was every book published within the last 100 years?
+console.log(filtered2);
+//was every book published within the last 100 years? - ????????
 
-//print a list of books that "includes" the genre historical
+//print a list of books that "includes" the genre historical - ???????????????????
